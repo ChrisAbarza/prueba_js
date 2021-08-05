@@ -11,5 +11,5 @@ Proyectos de práctica para javascript basado en:
 ### 01-carrito
 ```
 Carrito de compras: 
-practicando variables, arreglos, funciones, DOM Scripting, eventos 
+practicando variables, arreglos, funciones, DOM Scripting, DOM Traversing, eventos, event Bubbling, Destructuring
 ```

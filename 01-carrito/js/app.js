@@ -5,7 +5,7 @@ const listaCursos = document.querySelector('#lista-cursos');
 const containerCarrito = document.querySelector('#lista-carrito tbody');
 const btnVaciarCarrito = document.querySelector('#vaciar-carrito');
 let carritoCompra = [];
-
+// comentario de prueba
 
 cargarEventListener();
 function cargarEventListener(){

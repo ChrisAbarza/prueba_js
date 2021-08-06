@@ -5,13 +5,16 @@ const listaCursos = document.querySelector('#lista-cursos');
 const containerCarrito = document.querySelector('#lista-carrito tbody');
 const btnVaciarCarrito = document.querySelector('#vaciar-carrito');
 let carritoCompra = [];
-// comentario de prueba
 
 cargarEventListener();
 function cargarEventListener(){
     // agregando curso con btn 'agregar al carrito'
-    listaCursos.addEventListener('click', agregarCurso)
-
+    listaCursos.addEventListener('click', agregarCurso);
+    carrito.addEventListener('click',eliminarDelCarrito);
+    btnVaciarCarrito.addEventListener('click',() => {
+        carritoCompra = [];
+        limpiarHTML();
+    })
 }
 
 function agregarCurso(e){
@@ -21,6 +24,25 @@ function agregarCurso(e){
     if(e.target.classList.contains('agregar-carrito')){
         const cursoSeleccionado = e.target.parentElement.parentElement
         leerDatosCurso(cursoSeleccionado);
+    }
+}
+
+function eliminarDelCarrito(e){
+    e.preventDefault();
+    if(e.target.classList.contains('borrar-curso')){
+        const cursoId = e.target.getAttribute('data-id');
+
+        // en caso de tener mas de una copia de un mismo elemento, se borra de a uno
+        carritoCompra.map(curso => {
+            if(curso.id === cursoId){
+                curso.cantidad--;
+                return curso;
+            }
+            return curso;
+        });
+
+        carritoCompra = carritoCompra.filter(curso => curso.id !== cursoId || curso.cantidad > 0);
+        carritoHTML();
     }
 }
 
@@ -34,9 +56,26 @@ function leerDatosCurso(curso){
         id:             curso.querySelector('a').getAttribute('data-id'),
         cantidad:       1
     };
+
+    // revisa si el curso ya existe en el carrito
+    const existe = carritoCompra.some( curso => curso.id === infoCurso.id);
+    if(existe){
+        // agrega una cantidad
+        const cursos = carritoCompra.map(curso => {
+            if(curso.id === infoCurso.id){
+                curso.cantidad++;
+                return curso;
+            }
+            return curso;
+        });
+        carritoCompra = [...cursos];
+    }else{
+        // agregar el elemento
+        carritoCompra = [...carritoCompra,infoCurso];
+
+    }
     
     // agregando al arreglo carrito
-    carritoCompra = [...carritoCompra,infoCurso];
 
     carritoHTML();
 }

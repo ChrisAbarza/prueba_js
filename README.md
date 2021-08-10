@@ -5,6 +5,7 @@ Proyectos de práctica para javascript basado en:
 
 ## Resumen de tecnologías 📌
 *JavaScript
+* neovim
 
 ## Detalles de cada proyecto 📋
 
@@ -13,3 +14,9 @@ Proyectos de práctica para javascript basado en:
 Carrito de compras: 
 practicando variables, arreglos, funciones, DOM Scripting, DOM Traversing, eventos, event Bubbling, Destructuring
 ```
+### 02-enviarEmail
+```
+Simulador de envio de Emails:
+Similar a 01-carrito y sumando, validaciones, expresiones regulares
+```
+

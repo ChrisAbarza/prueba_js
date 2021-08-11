@@ -9,8 +9,10 @@ const mensaje = document.querySelector('#mensaje');
 
 const er = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-
+//inicializa los listeners
 eventListeners();
+
+// funcion de listeners
 function eventListeners(){
   // se lanza al cargar el DOM
   document.addEventListener('DOMContentLoaded', iniciarApp);
@@ -29,6 +31,7 @@ function eventListeners(){
 
 //funciones
 
+//funcion al cargar dom
 function iniciarApp(){
   btnEnviar.disabled = true;
   btnEnviar.classList.add('cursor-not-allowed','opacity-50');
@@ -36,8 +39,18 @@ function iniciarApp(){
 
 // funcion que valida el formulario
 function validarFormulario(e){
+
+  const elemento = e.target;
   
-  if(e.target.value.length > 0){
+  validarElementoNoNulo(elemento);
+  validar_email(elemento); 
+  validarTodoCorrecto();
+  
+}
+
+// valida que el elemento ingresado no sea null
+function validarElementoNoNulo(elemento){
+ if(elemento.value.length > 0){
     //eliminar cuadro de errores
     const error = document.querySelector('p.error');
     if(error){
@@ -45,20 +58,24 @@ function validarFormulario(e){
 
     }
 
-    e.target.classList.remove('border','border-red-500');
-    e.target.classList.add('border','border-green-500');
+    elemento.classList.remove('border','border-red-500');
+    elemento.classList.add('border','border-green-500');
       
   }else{
-    e.target.classList.remove('border','border-green-500');
-    e.target.classList.add('border','border-red-500');
+    elemento.classList.remove('border','border-green-500');
+    elemento.classList.add('border','border-red-500');
 
     mostrarError('Todos los campos son necesarios');
   } 
 
-  if(e.target.type === 'email'){
+}
+
+// valida en caso que el elemento sea input:email, que se encuentre en formato valido
+function validar_email(elemento){
+  if(elemento.type === 'email'){
     
     //email en formato valido
-    if(er.test(e.target.value) ){
+    if(er.test(elemento.value) ){
        //eliminar cuadro de errores
       const error = document.querySelector('p.error');
 
@@ -67,23 +84,29 @@ function validarFormulario(e){
 
       }
 
-      e.target.classList.remove('border','border-red-500');
-      e.target.classList.add('border','border-green-500');
+      elemento.classList.remove('border','border-red-500');
+      elemento.classList.add('border','border-green-500');
     }
     else{
-      e.target.classList.remove('border','border-green-500');
-      e.target.classList.add('border','border-red-500'); 
+      elemento.classList.remove('border','border-green-500');
+      elemento.classList.add('border','border-red-500'); 
       mostrarError('El Email no tiene el formato correcto');
     }
  
   }
-  if(er.test(email.value) && asunto.value !== '' && mensaje.value !== ''){
+
+}
+
+//valida que todos los campos sean correctos
+function validarTodoCorrecto(){
+  if(er.test(email.value) && asunto.value !== '' && mensaje.value !== ''){	
      btnEnviar.disabled = false;
      btnEnviar.classList.remove('cursor-not-allowed','opacity-50');
     
   }
 }
 
+//muestra mensajes de error abajo de textarea mensajes
 function mostrarError(mensaje){
   const mensajeError = document.createElement('p');
   mensajeError.textContent = mensaje;
@@ -99,6 +122,8 @@ function mostrarError(mensaje){
 
 }
 
+
+//simula el envio de email total 8s
 function enviarEmail(e){
   e.preventDefault();
 
@@ -124,7 +149,7 @@ function enviarEmail(e){
   },3000 );
 }
 
-
+//resetea el formulario a los valores por defecto
 function resetearForm(){
   formulario.reset();
   email.classList.remove('border','border-green-500','border-red-500');

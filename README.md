@@ -19,4 +19,9 @@ practicando variables, arreglos, funciones, DOM Scripting, DOM Traversing, event
 Simulador de envio de Emails:
 Similar a 01-carrito y sumando, validaciones, expresiones regulares
 ```
+### 03-buscador
+```
+Buscador de autos:
+Filtrado de datos
 
+```

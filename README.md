@@ -22,6 +22,6 @@ Similar a 01-carrito y sumando, validaciones, expresiones regulares
 ### 03-buscador
 ```
 Buscador de autos:
-Filtrado de datos
+Filtrado de datos, funciones de alto nivel, programación funcional
 
 ```

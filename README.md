@@ -12,7 +12,8 @@ Proyectos de práctica para javascript basado en:
 ### 01-carrito
 ```
 Carrito de compras: 
-practicando variables, arreglos, funciones, DOM Scripting, DOM Traversing, eventos, event Bubbling, Destructuring
+practicando variables, arreglos, funciones, DOM Scripting, DOM Traversing, eventos, event Bubbling,
+Destructuring, (ACTUALIZADO) agregado LocalStorage a carrito de compras
 ```
 ### 02-enviarEmail
 ```

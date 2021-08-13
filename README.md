@@ -25,3 +25,9 @@ Buscador de autos:
 Filtrado de datos, funciones de alto nivel, programación funcional
 
 ```
+### 04-LocalStorage
+```
+Simulador de tweets:
+LocalStorage (agregar y eliminar) en json obj
+
+```

@@ -32,3 +32,9 @@ Simulador de tweets:
 LocalStorage (agregar y eliminar) en json obj
 
 ```
+### 05-Seguro
+```
+Simulador de cotizador de seguro:
+Prototypes
+
+```

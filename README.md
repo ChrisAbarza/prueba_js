@@ -38,3 +38,9 @@ Simulador de cotizador de seguro:
 Prototypes
 
 ```
+### 06-GastoSemanal
+```
+Gestionador de presupuesto semanal:
+Clases
+
+```

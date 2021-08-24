@@ -41,6 +41,6 @@ Prototypes
 ### 06-GastoSemanal
 ```
 Gestionador de presupuesto semanal:
-Clases
+Clases, object literal enhancement
 
 ```

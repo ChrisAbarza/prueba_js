@@ -54,9 +54,7 @@ function datosCita(e){
 function nuevaCita(e){
   e.preventDefault();
 
-  //extraer info de obj de citas
-  const { mascota, propietario, telefono, fecha, hora, sintomas } = citaObj;
-
+  modo === 'guardar' ? citaObj.id = Date.now() : '';
   
   //validar vacios
   let mensajeError = '';
@@ -75,11 +73,11 @@ function nuevaCita(e){
   if(modo === 'editar'){
     //mensaje agregado correctamente
     ui.imprimirAlerta('Editado correctamente', 'correcto');
-  }else{
-    //generar id unico para la cita
-    citaObj.id = Date.now();
 
-    //crear una nueva cita
+    administrarCitas.editarCita({...citaObj});
+  }else{    
+
+    //crear una nueva cita solo una copia por eso el {...citaObj}
     administrarCitas.agregarCita({...citaObj});
 
     //mensaje agregado correctamente

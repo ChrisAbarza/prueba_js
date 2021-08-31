@@ -17,7 +17,7 @@ Destructuring, (ACTUALIZADO) agregado LocalStorage a carrito de compras
 ```
 ### 02-enviarEmail
 ```
-Simulador de envio de Emails:
+Simulador de envío de Emails:
 Similar a 01-carrito y sumando, validaciones, expresiones regulares
 ```
 ### 03-buscador
@@ -47,6 +47,6 @@ Clases, object literal enhancement
 ### 07-AdministrarCitas
 ```
 Administrador de pacientes de veterinaria:
-Clases(repaso).
+Clases, Módulos 
 
 ```

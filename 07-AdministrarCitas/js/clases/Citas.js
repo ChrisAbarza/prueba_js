@@ -17,3 +17,5 @@ class Citas{
   }
 
 }
+
+export default Citas;

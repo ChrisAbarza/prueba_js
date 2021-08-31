@@ -1,3 +1,6 @@
+import { eliminarCita,cargarEditarCita } from '../funciones.js';
+import { contenedorCitas } from '../selectores.js';
+
 class UI{
   imprimirAlerta(mensaje,tipo){
     const divMensaje = document.createElement('div');
@@ -95,3 +98,5 @@ class UI{
     }
   }
 }
+
+export default UI;

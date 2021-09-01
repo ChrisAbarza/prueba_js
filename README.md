@@ -45,13 +45,13 @@ Gestionador de presupuesto semanal:
 Clases, object literal enhancement
 
 ```
-## 07-AdministrarCitas
+### 07-AdministrarCitas
 ```
 Administrador de pacientes de veterinaria:
 Clases, Módulos 
 
 ```
-## 08-CRMIndexedDB
+### 08-CRMIndexedDB
 ```
 CRM Customer Relationship Management, herramienta para dar seguimiento a clientes:
 IndexedDB, Módulos

@@ -6,6 +6,7 @@ Proyectos de práctica para javascript basado en:
 ## Resumen de tecnologías 📌
 * JavaScript
 * neovim
+* IndexeDB
 
 ## Detalles de cada proyecto 📋
 
@@ -44,9 +45,15 @@ Gestionador de presupuesto semanal:
 Clases, object literal enhancement
 
 ```
-### 07-AdministrarCitas
+## 07-AdministrarCitas
 ```
 Administrador de pacientes de veterinaria:
 Clases, Módulos 
+
+```
+## 08-CRMIndexeDB
+```
+CRM Customer Relationship Management, herramienta para dar seguimiento a clientes:
+IndexeDB
 
 ```

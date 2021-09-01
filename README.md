@@ -51,9 +51,9 @@ Administrador de pacientes de veterinaria:
 Clases, Módulos 
 
 ```
-## 08-CRMIndexeDB
+## 08-CRMIndexedDB
 ```
 CRM Customer Relationship Management, herramienta para dar seguimiento a clientes:
-IndexeDB
+IndexedDB, Módulos
 
 ```

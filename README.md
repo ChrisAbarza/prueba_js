@@ -6,7 +6,6 @@ Proyectos de práctica para javascript basado en:
 ## Resumen de tecnologías 📌
 * JavaScript
 * neovim
-* IndexeDB
 
 ## Detalles de cada proyecto 📋
 

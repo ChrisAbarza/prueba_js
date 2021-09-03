@@ -1,4 +1,11 @@
-import { formulario } from "../selectores.js";
+import {
+  formulario,
+  nombreInput,
+  correoInput,
+  telefonoInput,
+  empresaInput,
+  idInput,
+} from "../selectores.js";
 
 export default class UI {
   imprimirAlerta(mensaje, tipo) {
@@ -27,6 +34,10 @@ export default class UI {
         "border-green-400",
         "text-green-700"
       );
+      formulario.reset();
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
     }
 
     divMensaje.textContent = mensaje;
@@ -36,5 +47,14 @@ export default class UI {
     setTimeout(() => {
       divMensaje.remove();
     }, 3000);
+  }
+  llenarFormularioEdit(cliente) {
+    const { nombre, correo, telefono, empresa, id } = cliente;
+
+    nombreInput.value = nombre;
+    correoInput.value = correo;
+    telefonoInput.value = telefono;
+    empresaInput.value = empresa;
+    idInput.value = id;
   }
 }

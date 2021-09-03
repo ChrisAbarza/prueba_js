@@ -46,5 +46,33 @@ import UI from "./clases/UI.js";
       }
       return;
     }
+
+    // crear obj con info
+
+    const cliente = {
+      nombre,
+      correo,
+      telefono,
+      empresa,
+    };
+
+    cliente.id = Date.now();
+
+    crearNuevoCliente(cliente);
+  }
+
+  function crearNuevoCliente(cliente) {
+    const transaction = DB.transaction(["crm"], "readwrite");
+
+    const objectStore = transaction.objectStore("crm");
+
+    objectStore.add(cliente);
+
+    transaction.onerror = (e) => {
+      ui.imprimirAlerta(`${e.target.error.message}`, "error");
+    };
+    transaction.oncomplete = () => {
+      ui.imprimirAlerta("Ingresado correctamente", "correcto");
+    };
   }
 })();

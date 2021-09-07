@@ -8,6 +8,7 @@ Proyectos de práctica para javascript basado en:
 
 - JavaScript
 - neovim
+- Fetch API
 
 ## Detalles de cada proyecto 📋
 
@@ -71,5 +72,13 @@ Clases, Módulos
 ```
 CRM Customer Relationship Management, herramienta para dar seguimiento a clientes:
 IndexedDB, Módulos, IIFE
+
+```
+
+### 09-ClimaFetch
+
+```
+Herramienta de consulta de clima utilizando a API gratuita de [openWeather](https://openweathermap.org/) :
+APIs,clases,modulos
 
 ```

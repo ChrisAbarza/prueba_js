@@ -1,12 +1,8 @@
-import {
-  container,
-  resultado,
-  formulario,
-  ciudadinput,
-  paisInput,
-} from "./selectores.js";
+import { formulario, ciudadinput, paisInput } from "./selectores.js";
 
 import UI from "./clases/UI.js";
+
+import ClimaAPI from "./clases/ClimaAPI.js";
 
 const ui = new UI();
 
@@ -16,7 +12,7 @@ window.addEventListener("load", () => {
 
 function buscarClima(e) {
   e.preventDefault();
-
+  ui.limpiarHTML();
   //validar
   //
   const ciudad = ciudadinput.value;
@@ -26,4 +22,23 @@ function buscarClima(e) {
     ui.mostrarError("Se requiere Pais y Ciudad");
     return;
   }
+
+  //async con clases
+  (async () => {
+    const climaApi = new ClimaAPI(ciudad, pais);
+    climaApi.consultarAPI().then(() => {
+      gestionarRespuesta(climaApi.datos);
+    });
+  })();
+}
+
+function gestionarRespuesta(datos) {
+  const { cod } = datos;
+  if (Number(cod) !== 200) {
+    ui.mostrarError(`Error: ${datos.cod}, Mensaje: "${datos.message}"`);
+
+    return;
+  }
+
+  ui.mostrarClima(datos);
 }

@@ -25,6 +25,7 @@ function buscarClima(e) {
 
   //async con clases
   (async () => {
+    ui.spinner();
     const climaApi = new ClimaAPI(ciudad, pais);
     climaApi.consultarAPI().then(() => {
       gestionarRespuesta(climaApi.datos);

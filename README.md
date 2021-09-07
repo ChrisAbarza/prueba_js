@@ -80,5 +80,6 @@ IndexedDB, Módulos, IIFE
 ```
 Herramienta de consulta de clima utilizando a API gratuita de [openWeather](https://openweathermap.org/) :
 APIs,clases,modulos
+(Notas) async con clases en app.js y destructuring multinivel en UI.js
 
 ```

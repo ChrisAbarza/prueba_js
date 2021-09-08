@@ -37,6 +37,7 @@ function gestionarRespuesta(datos) {
   const { cod } = datos;
   if (Number(cod) !== 200) {
     ui.mostrarError(`Error: ${datos.cod}, Mensaje: "${datos.message}"`);
+    ui.limpiarHTML();
 
     return;
   }

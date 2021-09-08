@@ -78,8 +78,16 @@ IndexedDB, Módulos, IIFE
 ### 09-ClimaFetch
 
 ```
-Herramienta de consulta de clima utilizando a API gratuita de [openWeather](https://openweathermap.org/) :
+Herramienta de consulta de clima utilizando a API gratuita de (https://openweathermap.org/) :
 APIs,clases,modulos
 (Notas) async con clases en app.js y destructuring multinivel en UI.js
+
+```
+
+### 10-buscarLetras
+
+```
+Herramienta de consulta de letras de canciones utilizando a API gratuita de (https://lyricsovh.docs.apiary.io):
+APIs,clases,modulos
 
 ```

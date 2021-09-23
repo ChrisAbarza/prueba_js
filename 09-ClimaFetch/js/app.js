@@ -25,8 +25,14 @@ function buscarClima(e) {
 
   //async con clases
   (async () => {
-    ui.spinner();
     const climaApi = new ClimaAPI(ciudad, pais);
+    if (!climaApi.appID) {
+      ui.mostrarError(
+        'No hay una apikey valida guardada en localStorage, favor guardarla bajo la llave "api_key_weather"'
+      );
+      return;
+    }
+    ui.spinner();
     climaApi.consultarAPI().then(() => {
       gestionarRespuesta(climaApi.datos);
     });

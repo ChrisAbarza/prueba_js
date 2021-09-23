@@ -91,3 +91,11 @@ Herramienta de consulta de letras de canciones utilizando a API gratuita de (htt
 APIs,clases,modulos
 
 ```
+
+### 11-PixabayImagenes
+
+```
+Muestra de imágenes utilizando la API gratuita de (https://pixabay.com/api/docs/)
+APIs,clases,modulos,async,Paginador
+
+```

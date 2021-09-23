@@ -1,6 +1,8 @@
 export default class ClimaAPI {
   constructor(ciudad, pais) {
-    this.appID = "4c28a7bf35cf9ea1907bce7b93b41dff";
+    //apikey guardada en ls para evitar subirla a github
+    const miStorage = window.localStorage;
+    this.appID = miStorage.getItem("api_key_weather");
     this.ciudad = ciudad;
     this.pais = pais;
   }

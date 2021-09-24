@@ -1,6 +1,9 @@
-import { formulario, resultado } from "../selectores.js";
+import { formulario, resultado, paginacionDiv } from "../selectores.js";
 
 export default class UI {
+  constructor() {
+    this.iteradorSiguiente;
+  }
   mostrarAlerta(mensaje) {
     const existeAlerta = document.querySelector(".error");
 
@@ -35,8 +38,8 @@ export default class UI {
     }, 3000);
   }
 
-  mostrarImagenes(imagenes) {
-    this.limpiarDivResultados();
+  mostrarImagenes(imagenes, cantidadPaginas) {
+    this.limpiarSelector(resultado);
 
     imagenes.forEach((imagen) => {
       const { previewURL, likes, views, largeImageURL } = imagen;
@@ -62,11 +65,50 @@ export default class UI {
 	</div>
       `;
     });
+
+    if (!this.iteradorSiguiente) {
+      this.limpiarSelector(paginacionDiv);
+      this.mostrarPaginacion(cantidadPaginas);
+    }
   }
 
-  limpiarDivResultados() {
-    while (resultado.firstChild) {
-      resultado.removeChild(resultado.firstChild);
+  mostrarPaginacion(cantidadPaginas) {
+    this.iteradorSiguiente = this.crearPaginacion(cantidadPaginas);
+
+    while (true) {
+      const { value, done } = this.iteradorSiguiente.next();
+
+      if (done) return;
+
+      //crear Boton de siguiente en paginacion
+      const botonSiguiente = document.createElement("a");
+      botonSiguiente.href = "#";
+      botonSiguiente.dataset.pagina = value;
+      botonSiguiente.textContent = value;
+      botonSiguiente.classList.add(
+        "siguiente",
+        "bg-yellow-400",
+        "px-4",
+        "py-1",
+        "mr-2",
+        "mb-4",
+        "font-bold",
+        "uppercase",
+        "rounded"
+      );
+      paginacionDiv.appendChild(botonSiguiente);
+    }
+  }
+  //generador para paginacion
+  *crearPaginacion(cantidadPaginas) {
+    for (let i = 1; i <= cantidadPaginas; i++) {
+      yield i;
+    }
+  }
+
+  limpiarSelector(selector) {
+    while (selector.firstChild) {
+      selector.removeChild(selector.firstChild);
     }
   }
 }

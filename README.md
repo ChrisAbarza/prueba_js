@@ -96,6 +96,6 @@ APIs,clases,modulos
 
 ```
 Muestra de imágenes utilizando la API gratuita de (https://pixabay.com/api/docs/)
-APIs,clases,modulos,async,Paginador
+APIs,clases,modulos,async,Paginador,Generador(en clase UI)
 
 ```

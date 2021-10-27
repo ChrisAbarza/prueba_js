@@ -2,17 +2,19 @@ export default class CriptoAPI {
   constructor() {
     this.maxListadoCripto = 10;
   }
-  consultarCriptomonedas() {
+  async consultarCriptomonedas() {
     const urlListadoCripto = `https://min-api.cryptocompare.com/data/top/mktcapfull?limit=${this.maxListadoCripto}&tsym=USD`;
 
     return fetch(urlListadoCripto)
       .then((respuesta) => respuesta.json())
-      .then((datos) => this.obtenerCriptomonedas(datos.Data));
+      .then((datos) => datos.Data);
   }
 
-  obtenerCriptomonedas(datos) {
-    return new Promise((resolve) => {
-      resolve(datos);
-    });
+  async cotizarCripto(moneda, criptomoneda) {
+    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
+
+    return fetch(url)
+      .then((respuesta) => respuesta.json())
+      .then((datos) => datos.DISPLAY[criptomoneda][moneda]);
   }
 }

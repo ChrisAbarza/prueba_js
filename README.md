@@ -99,3 +99,11 @@ Muestra de imágenes utilizando la API gratuita de (https://pixabay.com/api/docs
 APIs,clases,modulos,async,Paginador,Generador(en clase UI)
 
 ```
+
+### 12-Criptomonedas
+
+```
+cotizador de criptomonedas utilizando la API gratuita de (https://min-api.cryptocompare.com/)
+APIs,clases,modulos,async
+
+```

@@ -35,8 +35,22 @@ function submitFormulario(e) {
     ui.mostrarAlerta("Ambos campos son obligatorios...");
     return;
   }
+
+  consultarApi();
 }
 
 function leerValor(e) {
   objBusqueda[e.target.name] = e.target.value;
+}
+
+function consultarApi() {
+  const { moneda, criptomoneda } = objBusqueda;
+
+  ui.mostrarSpinner();
+
+  (async () => {
+    cripto.cotizarCripto(moneda, criptomoneda).then((datos) => {
+      ui.mostrarCotizacionHTML(datos);
+    });
+  })();
 }

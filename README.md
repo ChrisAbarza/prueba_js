@@ -107,3 +107,11 @@ cotizador de criptomonedas utilizando la API gratuita de (https://min-api.crypto
 APIs,clases,modulos,async
 
 ```
+
+### 13-CalculadoraPropinas
+
+```
+Calculadora de consumos y propinas de restaurant, creando la api mediante json server
+APIs,clases,modulos,async,json server
+
+```
